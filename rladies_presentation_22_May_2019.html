@@ -21,14 +21,20 @@ class: center, middle, inverse, title-slide
 
 
 
-
-![](https://medicine.unimelb.edu.au/__data/assets/image/0008/2892185/varieties/medium.jpg)&lt;!-- --&gt;
-
 # Acknowledging
 
-Rladies Melbourne for the invitation to speak   
-Rladies community - welcoming and inclusive
+R-Ladies Melbourne for the invitation to speak   
 
+R-Ladies community - welcoming and inclusive
+
+---
+![](https://medicine.unimelb.edu.au/__data/assets/image/0008/2892185/varieties/medium.jpg)&lt;!-- --&gt;
+
+[Genomic Platform Group](https://umccr.org/)
+
+Focus  
+- managing genomics data to improve cancer patient care
+- open source software development
 
 ---
 ![](data/reproducibility.png)&lt;!-- --&gt;
@@ -37,8 +43,14 @@ Rladies community - welcoming and inclusive
 &lt;blockquote class="twitter-tweet"&gt;&lt;a href="https://twitter.com/trevorabranch/status/648987799648014336"&gt;&lt;/a&gt;&lt;/blockquote&gt;
 
 
-**reproducible** and **transparent**
+**reproducible** and **transparent** and **reuseable**
 
+---
+# 
+
+![](images/showme_trustme.png)
+
+.center[]
 
 ---
 
@@ -50,12 +62,16 @@ class: center, inverse
 
 Inspired and confident to dive in!
 
+
+
 ---
 
 # Assumptions
 
 * You are using RStudio (Integrated Developer Environment)
+
 * You have heard of git
+
 * Familiar with HTML and CSS
 
 ---
@@ -76,7 +92,10 @@ class: center, inverse, middle
 [Latex](http://nitens.org/taraborelli/latex) is a document preparation system.  
 Plain text + markup = defined structure (article, letter, bibliography)
 
+--
+
 Perfect for those who **really** care about typeface:
+
 
 _`Kerning is the process of selectively adjusting the spacing between letters pairs to improve the overall appearance of text.`_
 
@@ -88,17 +107,30 @@ Early 2000's, along came Sweave.
 
 A function that enables integration of R code into LaTex documents
 
-The purpose is _"to create dynamic reports, which can be updated automatically if data or analysis change"._ [1]
+--
+
+The purpose is [_"to create dynamic reports, which can be updated automatically if data or analysis change"._](http://leg.ufpr.br/lib/exe/fetch.php/projetos:obesidade:sweave-rnews-2002-3.pdf)
+
+--
 
 1. Run each R script
+
+--
+
 2. Then run latex
+
+--
+
 3. then run bibtex
+
+--
+
 4. then run latex again
+
+--
+
 5. generates a pdf
 
-.footnote[
-[1] Leisch, Friedrich (2002). "Sweave, Part I: Mixing R and LaTeX: A short introduction to the Sweave file format and corresponding R functions" (PDF). R News. 2 (3): 28–31.
-]
 
 ---
 
@@ -108,7 +140,13 @@ GNU
 1. Create a [makefile](https://kbroman.org/minimal_make/examples/ex1/Makefile)
 2. type *make*
 
-* make will only rebuild anything that has been altered
+--
+
+* make will only rebuild anything that has been altered  
+
+--
+
+* first true example of reproducible research
 
 See Karl Broman (https://kbroman.org/minimal_make/) for a fantastic tutorial.
 
@@ -119,9 +157,12 @@ See Karl Broman (https://kbroman.org/minimal_make/) for a fantastic tutorial.
 knitr is Sweave reborn!  
 
 
-* knitr - packing in the goodness of Sweave alongside readable code  
+* knitr - packing in the goodness of Sweave alongside readable code
+
 * knitr uses Rmarkdown, a set of intuitive human-readable code for formatting
+
 * knitr supports many languages - Python, [Julia](https://cran.r-project.org/web/packages/JuliaCall/vignettes/Julia_in_RMarkdown.html), C++, SQL
+
 * knitr can produce html, pdf, and word
 
 * Rmarkdown has a restricted set of commands, and there is no way to create custom commands, however custom LaTeX can be included
@@ -132,7 +173,10 @@ knitr is Sweave reborn!
 
 A flavour of Markdown specifically for R.
 
-Rmarkdown - render + knit to html
+Rmarkdown = documentation language (.md) + programming language (R),  
+knit them together with knitr
+
+--
 
 Three main sections:
 * YAML header
@@ -145,7 +189,7 @@ Three main sections:
 
 # [YAML](https://yaml.org/spec/current.html) (rhymes with “camel”)
 
-YAML is human-friendly, cross language, Unicode based data serialization language designed around the common native data structures of agile programming languages.
+YAML is human-friendly, cross language, text.
 
 This block allows you to fine-tune the output of your document.
 YAML metadata allows for:
@@ -173,8 +217,16 @@ Common options:
 
 # Rmarkdown
 
-Easy within RStudio:  
-File -&gt; New File -&gt; R Markdown
+Advantages of RStudio:  
+(File -&gt; New Project -&gt; New Directory -&gt; New Project)
+
+* Self contained and portable
+* Working directory set to root of project on launch
+* Fresh session everytime the project is launched 
+
+--
+
+File -&gt; New File -&gt; R Markdown  
 
 Chunks:  
 * Infrastructure - environment (e.g. libraries), loading data, defining analysis parameters
@@ -187,15 +239,26 @@ Chunks:
 
 * Do not hardcode paths! - use [here](https://github.com/jennybc/here_here)
 
+--
+
 * Do not hardcode values! - use parameters
+
+--
 
 * Do not do everything in Rmarkdown (e.g. database queries)
 
+--
+
 * [Do not litter!](https://emilyriederer.netlify.com/post/rmarkdown-driven-development/)
+
+--
 
 * Reduce duplication with functions
 
+---
+# Reversible reproducible
 
+&lt;blockquote class="twitter-tweet"&gt;&lt;a href="https://twitter.com/noamross/status/1127273301443850240"&gt;&lt;/a&gt;&lt;/blockquote&gt;
 
 
 ---
@@ -210,13 +273,24 @@ Chunks:
 “If you can type words, you can use bookdown”  
 -@CivicAngela, RLadiesChicago
 
+--
+
+(yay!) write and publish a book
+
+--
+
+(boo!) tables can be ugly!
+
+--
+
+(boo!) collaboration can be hard
 
 ---
 
 # Bookdown
 
 .pull-left[
-&lt;img src="https://community.rstudio.com/uploads/default/original/2X/f/f50e88149dcdcb56efcbcaf6f572187d7ad4a3e6.png", width="80%"&gt;
+&lt;img src="https://community.rstudio.com/uploads/default/original/2X/f/f50e88149dcdcb56efcbcaf6f572187d7ad4a3e6.png", width="90%"&gt;
 ]
 
 .pull-right[
@@ -226,20 +300,27 @@ Chunks:
 ---
 
 
-&lt;img src="https://pbs.twimg.com/media/D3LbQ46XoAEfqkU.png" width="20%" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="https://pbs.twimg.com/media/D3LbQ46XoAEfqkU.png" width="15%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
 # Going one step further
 
 ## Why do we like workflowr?
 
 Helps scientists organise their research in a way that promotes:
-- reproducibility
-- collaboration/sharing of results
+- reproducibility  
+
+--
+
+- collaboration/sharing of results  
+
+--
+
 - effective project management
+
+--
 
 Combines literature programming **and** version control
 
-**Final result**:  
 A website, containing **time-stamped**, **versioned**, and **documented** results
 
 
@@ -310,22 +391,67 @@ wflow_git_push()
 
 # why workflowr
 
-* Creates a structured directory (consistency!, yay!)
-* Diffability - the ability to see how an analysis has changed over time
+* Creates a structured directory (consistency!, yay!)  
+(keeps data, methods and outputs separate)
+
+--
+
+* Diffability - the ability to see how an analysis has changed over time  
+
+--
+
 * Git for the petrified!
+
+--
+
+Note that **only** workflowr RMD files can sit in the `analysis` folder.
 
 Once you are comfortable with the basics, got nuts with customisation.  
 e.g. https://github.com/timtrice/workflowr_skeleton
+
 
 ---
 
 # In addition
 
-Sharing tidy, standardized, reproducible  data sets for publications and collaborations can be challenging.  
-read https://ropensci.org/blog/2018/09/18/datapackager/  
+Building on workflowr, use community-recognised structures:
+- .R scripts in scripts/
+- tests in tests/
+
+use assertr to check 
+
+**Making data accessible**:  
+- sharing tidy, standardized, reproducible  data sets for publications and collaborations can be challenging.  
+read https://ropensci.org/blog/2018/09/18/datapackager/
+- piggyback - attach files (up to 2gig) to a GitHub release
+- also [rdrop2](https://github.com/karthik/rdrop2) [rboxr](https://github.com/r-box/boxr)
+  
 Caveats - see https://github.com/ropensci/DataPackageR - e.g. small size of data  
+https://rstudio.github.io/packrat/ - Create and manage a per project library of packages
+
+An R-focused pipeline toolkit for reproducibility and high-performance computing (snakemake)
+
+usethis - automate common tasks
+
+datamaid
+
+drake 
+Data Frames in R for Make
+R-centric make
+- (interactive) dependency graph!
+
+Link everything up to CI
+
+Isolate your computing environment
 
 
+Docker
+- [containerit](https://github.com/o2r-project/containerit) - can take an arbituary and generate a docker file
+- Jupyter Project - repo2docker
+
+With a docker file
+BinderHub - can lauch a live notebook from any GitHub repo
+All packages installed, all code, all data
 
 ---
 
@@ -334,12 +460,20 @@ Caveats - see https://github.com/ropensci/DataPackageR - e.g. small size of data
 
 Defining production:
 
-"Software environments that are used and relied on by real users with real consequences if things go wrong" - @_ColinFay  
+_"Software environments that are used and relied on by real users with real consequences if things go wrong"_ 
 
-"Production is anything that is run repeatedly and that the business relies on"
+_"Production is anything that is run repeatedly and that the business relies on"_
+
+--
 
 * No real/private/patient data in dev environments  
+
+--
+
 * Dev is **not** for long-term or stable work, could be wiped at any time  
+
+--
+
 * Production is real data, stable services/tools/workflows, tight(er) access control
 
 ---
@@ -350,47 +484,107 @@ Defining production:
 * list dependencies
 * work everywhere
 
----
-
-# Cloud computing
-## There is no R in AWS
-
-1. use a bastion account
-2. pay attention to IAM
-3. log into EC2 instances via the AWS SSM Session Manager - no SSH key handling and fully audited.
-4. Programmable, **repeatable** infrastructure - infrastructure as code (IaC) - helps with resource management and tracking changes.
 
 ---
 
 # Running RStudio in AWS
 
-Log into the AWS Management Console:
+Via the AWS Management Console:
 
-1. EC2
-2. Configure the security groups for port 80 and 8787
-3. Install R
-4. Install RStudio
-5. Create a user for RStudio
-6. Point the public DNS (IPv4) at the correct port, and bingo!
+EC2 +
+
+--
+
+Configure the security groups for port 80 and 8787
+
+--
+
+Install R
+
+--
+
+Install RStudio
+
+--
+
+Create a user for RStudio
+
+--
+
+Point the public DNS (IPv4) at the correct port, and bingo!
+
+--
+
+Can bypass installation by using [RStudio Amazon Machine Image](http://www.louisaslett.com/RStudio_AMI/)
 
 ---
 
-# R on AWS
+# AWS tips
 
-Make use of the multicores:
+1. use a bastion account
 
-install.packages(c('doMC', 'foreach')) 
-library(foreach) 
-library(doMC) 
-doMC::registerDoMC(cores = detectCores())
-detectCores()
-foreach::getDoParWorkers()
-https://blog.sicara.com/speedup-r-rstudio-parallel-cloud-performance-aws-96d25c1b13e2
+--
 
+2. pay attention to IAM
 
+--
+
+3. log into EC2 instances via the AWS SSM Session Manager - no SSH key handling and fully audited.
+
+--
+
+4. Programmable, **repeatable** infrastructure - infrastructure as code (IaC) - helps with resource management and tracking changes.
+
+---
+# The abc of presentations
+
+*Cool kids will dump their xaringan slides online and never bring a usb stick to their group meetings.* - [Yihui Xie](https://yihui.name/en/about/)
+
+--
+
+- Create a new repository in GitHub: *my_awesome_R_talk*  
+(share the love, make it public)
+
+--
+
+- Clone
+
+--
+
+- Open RStudio in this repo
+
+--
+
+- Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+
+```r
+devtools::install_github("yihui/xaringan")
+```
+
+--
+
+- Create a new R Markdown document from the menu `File -&gt; New File -&gt; R Markdown -&gt; From Template -&gt; Ninja Presentation`
+
+--
+
+- Click the `Knit` button to compile it;
+
+--
+
+- `git status, git add, git commit -m, git push`
+
+--
+
+- GitHub -&gt; Settings -&gt; GitHub Pages
 
 ---
 # Resources
+
+
+* For learning xaringan, massive thanks to Allison Hill:  
+https://alison.rbind.io/slides/rladies-demo-slides.html#1
+https://github.com/rbind/apreshill/blob/master/static/slides/rladies-demo-slides.Rmd
+https://alison.rbind.io/post/r-ladies-slides/
 
 * Learn xaringan thanks to [Allison Hill](https://github.com/rbind/apreshill/blob/master/static/slides/rladies-demo-slides.Rmd)
 * https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd
