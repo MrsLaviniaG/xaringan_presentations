@@ -488,7 +488,9 @@ sharing tidy, standardized, reproducible  data sets for publications and collabo
 - [DataPackageR](https://ropensci.org/blog/2018/09/18/datapackager/)
 - [piggyback](https://github.com/ropensci/piggyback) - attach files (up to 2gig) to a GitHub release
 - also [rdrop2](https://github.com/karthik/rdrop2) [rboxr](https://github.com/r-box/boxr)
-  
+
+--
+
 **Link everything up to CI**:  
 - [testthat](http://r-pkgs.had.co.nz/tests.html) - make unit tests that will run automatically through a continuous integration platform
 - [pRojects](https://www.rdocumentation.org/packages/pRojects/versions/0.0.1.9003) - all projects setup with Git and Travis by default
@@ -561,7 +563,7 @@ _"Production is anything that is run repeatedly and that the business relies on"
 ---
 #The biggest of the big data in R
 
-Take advantage of a community [RStudio Amazon Machine Image](http://www.louisaslett.com/RStudio_AMI/)
+Use a [RStudio Amazon Machine Image](http://www.louisaslett.com/RStudio_AMI/)
 
 --
 
@@ -591,7 +593,7 @@ Take advantage of a community [RStudio Amazon Machine Image](http://www.louisasl
 * SSD storage (faster, zero IO costs, cheap!)  
  
 * pre-installed MCMC samplers - (Stan and JAGS)  
-* Arbitrary precision arithmetic and number theory libraries supported out of the box (GMP, MPFR, FLINT)   
+* Arbitrary precision arithmetic and number theory libraries (GMP, MPFR, FLINT)   
 * Optimised BLAS for automatically faster matrix operations than base R libraries (OpenBLAS).
 
 --
@@ -615,7 +617,7 @@ Take advantage of a community [RStudio Amazon Machine Image](http://www.louisasl
 
 --
 
-Paste the public DNS (IPv4) link into a new tab!
+* Paste the public DNS (IPv4) link into a new tab!
 
 ---
 # AWS tips
