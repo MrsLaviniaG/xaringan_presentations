@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
-    <title>Baby one more timeReproducibility in R and when to pull in the big gunsLavinia Gordon</title>
+    <title>Baby one more timeReproducibility in R and when to pull in the big gunsLavinia Gordon, UMCCR</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Lavinia Gordon, UMCCR" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/rladies.css" rel="stylesheet" />
     <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
@@ -12,9 +11,8 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Baby one more time<BR><span style="font-size: 60%;">Reproducibility in R and when to pull in the big guns<BR>Lavinia Gordon</span>
+# Baby one more time<BR><span style="font-size: 60%;">Reproducibility in R and when to pull in the big guns<BR>Lavinia Gordon, UMCCR</span>
 ## <img src="https://www.pngarts.com/files/2/Britney-Spears-PNG-Image.png" /><!-- -->
-### Lavinia Gordon, UMCCR
 
 ---
 
@@ -159,11 +157,8 @@ GNU
 
 --
 
-* first true example of reproducible research
+* [first true example](https://kbroman.org/minimal_make/) of reproducible research
 
---
-
-See [Karl Bromans pages](https://kbroman.org/minimal_make/) for a fantastic tutorial.
 
 ---
 
@@ -307,13 +302,7 @@ Chunks:
 
 # [Bookdown](https://community.rstudio.com/t/announcing-winners-of-the-1st-bookdown-contest/16394)
 
-.pull-left[
-&lt;img src="https://community.rstudio.com/uploads/default/original/2X/f/f50e88149dcdcb56efcbcaf6f572187d7ad4a3e6.png", width="90%"&gt;
-]
-
-.pull-right[
-&lt;img src="https://s3.amazonaws.com/datascienceheroes.com/img/blog/dslb_2.gif", width="80%"&gt;
-]
+&lt;img src="https://s3.amazonaws.com/datascienceheroes.com/img/blog/dslb_2.gif" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -561,57 +550,83 @@ _"Production is anything that is run repeatedly and that the business relies on"
 
 * work everywhere
 
+---
+#The biggest of the big data in R
+
+Take advantage of a community [RStudio Amazon Machine Image](http://www.louisaslett.com/RStudio_AMI/)
+
+--
+
+**Machine learning:**
+* Java 8 JRE enabling full support for H2O and Spark  
+* CUDA and cuDNN preinstalled  
+* Immediate support for EC2 P2 GPU instances, supporting acceleration of [Tensorflow](https://tensorflow.rstudio.com/) and [Keras](https://keras.rstudio.com/)
+
+--
+
+&lt;span style = 'font-size: 70%;'&gt;
+`install.packages("tensorflow")`  
+`library("tensorflow")`  
+`install_tensorflow(version = "gpu")`
+&lt;/span&gt;&lt;BR&gt;&lt;BR&gt;
+&lt;span style = 'font-size: 70%;'&gt;
+`install.packages("keras")`   
+`library("keras")`  
+`install_keras(tensorflow = "gpu")`  
+&lt;/span&gt;
 
 ---
+#The biggest of the big data in R
 
-# Running RStudio in AWS
 
-Via the AWS Management Console:
 
---
-
-EC2
-
---
-
-Configure the security groups for port 80 and 8787
+* SSD storage (faster, zero IO costs, cheap!)  
+ 
+* pre-installed MCMC samplers - (Stan and JAGS)  
+* Arbitrary precision arithmetic and number theory libraries supported out of the box (GMP, MPFR, FLINT)   
+* Optimised BLAS for automatically faster matrix operations than base R libraries (OpenBLAS).
 
 --
 
-Install R
+**Using AWS:**
+
+* Via the [AWS Management Console](https://aws.amazon.com/console/):
 
 --
 
-Install RStudio
+* EC2
 
 --
 
-Create a user for RStudio
+* Community instance (RStudio)  
 
 --
 
-Point the public DNS (IPv4) at the correct port, and bingo!
+* Configure Security Group  
+[port 8787](https://support.rstudio.com/hc/en-us/articles/200552316-Configuring-the-Server)
 
 --
 
-Can bypass installation by using [RStudio Amazon Machine Image](http://www.louisaslett.com/RStudio_AMI/)
+Paste the public DNS (IPv4) link into a new tab!
 
 ---
 # AWS tips
 
-1. use a bastion account
+1. [use a bastion account](https://blog.coinbase.com/you-need-more-than-one-aws-account-aws-bastions-and-assume-role-23946c6dfde3)
 
 --
 
-2. pay attention to IAM
+2. pay attention to [IAM](https://aws.amazon.com/iam/)
 
 --
 
-3. log into EC2 instances via the AWS SSM Session Manager - no SSH key handling and fully audited.
+3. log into EC2 instances via the [AWS SSM Session Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html) - no SSH key handling and fully audited.
 
 --
 
 4. Programmable, **repeatable** infrastructure - infrastructure as code (IaC) - helps with resource management and tracking changes.
+
+&lt;img src="https://www.terraform.io/assets/images/logo-text-8c3ba8a6.svg" width="30%" /&gt;
 
 ---
 # The abc of presentations
@@ -662,12 +677,12 @@ devtools::install_github("yihui/xaringan")
 * For learning xaringan, massive thanks to Allison Hill:  
 https://alison.rbind.io/post/r-ladies-slides/ - great intro  
 https://alison.rbind.io/slides/rladies-demo-slides.html#1  
-https://github.com/rbind/apreshill/blob/master/static/slides/rladies-demo-slides.Rmd
+https://github.com/rbind/apreshill/blob/master/static/slides/rladies-demo-slides.Rmd  
 https://arm.rbind.io/slides/xaringan.html#1
 
 ---
 
-&lt;img src="http://www.stickpng.com/assets/thumbs/580b585b2edbce24c47b24c2.png"&gt;
+&lt;img src="http://www.stickpng.com/assets/thumbs/580b585b2edbce24c47b24c2.png" style="display: block; margin: auto;" /&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
