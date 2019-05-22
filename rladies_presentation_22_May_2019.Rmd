@@ -334,7 +334,7 @@ Helps scientists organise their research in a way that promotes:
 
 --
 
-Combines literature programming **and** version control
+Combines literate programming **and** version control
 
 --
 
@@ -593,7 +593,7 @@ Use a [RStudio Amazon Machine Image](http://www.louisaslett.com/RStudio_AMI/)
 * SSD storage (faster, zero IO costs, cheap!)  
  
 * pre-installed MCMC samplers - (Stan and JAGS)  
-* Arbitrary precision arithmetic and number theory libraries (GMP, MPFR, FLINT)   
+   
 * Optimised BLAS for automatically faster matrix operations than base R libraries (OpenBLAS).
 
 --
